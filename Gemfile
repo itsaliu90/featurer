@@ -37,4 +37,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # Use mongodb as database
-gem 'mongoid', '~> 5.0.0'
+gem 'mongoid', '~> 5.0ra.0'
+gem 'pry-rails', :group => :development
