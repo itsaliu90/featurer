@@ -3,5 +3,5 @@ class FeatureRequest
 
   field :subject, type: String
   field :description, type: String
-  field :votes, type: Integer
+  field :votes, type: Integer, default: 0
 end

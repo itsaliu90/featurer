@@ -1,5 +1,10 @@
 class FeatureRequestsController < ApplicationController
-  before_action :set_feature_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_feature_request, only: [:show, :edit, :update, :destroy, :upvote]
+
+  def upvote
+    @feature_request.inc(votes: 1)
+    redirect_to feature_requests_url
+  end
 
   # GET /feature_requests
   # GET /feature_requests.json

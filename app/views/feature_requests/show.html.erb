@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<table>
+  <thead>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+	<tr>
+	  <td><%= @feature_request.subject %></td>
+	  <td><%= @feature_request.description %></td>
+	</tr>
+  </tbody>
+
+</table>
+
 <%= link_to 'Edit', edit_feature_request_path(@feature_request) %> |
 <%= link_to 'Back', feature_requests_path %>
