@@ -9,7 +9,7 @@ class FeatureRequestsController < ApplicationController
   # GET /feature_requests
   # GET /feature_requests.json
   def index
-    @feature_requests = FeatureRequest.all
+    @feature_requests = FeatureRequest.order_by(votes: 'desc')
   end
 
   # GET /feature_requests/1
