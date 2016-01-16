@@ -31,7 +31,6 @@ class FeatureRequestsController < ApplicationController
   # POST /feature_requests
   # POST /feature_requests.json
   def create
-    binding.pry
     @feature_request = FeatureRequest.new(feature_request_params)
 
     respond_to do |format|
