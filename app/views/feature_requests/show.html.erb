@@ -2,6 +2,7 @@
 
 <h1><%= @feature_request.subject %></h1>
 <p><%= @feature_request.description %></p>
+<p><%= @feature_request.status %></p>
 
 <%= link_to 'Edit', edit_feature_request_path(@feature_request) %> |
 <%= link_to 'Back', feature_requests_path %>
