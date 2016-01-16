@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-FeatureRequest.create!(subject: 'Improve UI', description: 'Right now the UI is a little bland!')
+FeatureRequest.create!(subject: 'Improve UI', description: 'Right now the UI is a little bland!', status: 'In Progress')
 FeatureRequest.create!(subject: 'Move /feature requests route to frontpage', description: 'I am sick of the default view')
 FeatureRequest.create!(subject: 'Deploy to Heroku', description: 'What good is it if it is not deployed?')
 FeatureRequest.create!(subject: 'Add users', description: 'So we can keep track of who requests what')

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :feature_requests do
     member do
       get 'upvote'

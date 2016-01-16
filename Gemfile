@@ -42,3 +42,6 @@ gem 'pry-rails', :group => :development
 
 # Use bootstrap
 gem "twitter-bootstrap-rails"
+
+# Use devise for authentication
+gem 'devise'

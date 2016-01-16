@@ -1,5 +1,8 @@
-<h1>Feature Requests</h1>
+<h1>CipherHealth Feature Tracker</h1>
 
+<%= link_to 'Add Feature Request', new_feature_request_path, class: "btn btn-success btn-lg btn-block", role: "button" %>
+
+<h2>Open Feature Requests</h2>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -11,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @feature_requests.each do |feature_request| %>
+    <% @open_feature_requests.each do |feature_request| %>
       <tr>
         <td><%= feature_request.subject %></td>
         <td><%= feature_request.description %></td>
@@ -22,6 +25,22 @@
   </tbody>
 </table>
 
-<br>
+<h2>In-Progress Feature Requests</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Description</th>
+    </tr>
+  </thead>
 
-<%= link_to 'New Feature request', new_feature_request_path, class: "btn btn-success btn-lg btn-block", role: "button" %>
+  <tbody>
+    <% @in_progress_feature_requests.each do |feature_request| %>
+      <tr>
+        <td><%= feature_request.subject %></td>
+        <td><%= feature_request.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

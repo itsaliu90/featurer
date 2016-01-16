@@ -1,4 +1,5 @@
 class FeatureRequestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_feature_request, only: [:show, :edit, :update, :destroy, :upvote]
 
   def upvote
@@ -9,7 +10,8 @@ class FeatureRequestsController < ApplicationController
   # GET /feature_requests
   # GET /feature_requests.json
   def index
-    @feature_requests = FeatureRequest.order_by(votes: 'desc')
+    @open_feature_requests = FeatureRequest.where(status: "Open").order_by(votes: 'desc')
+    @in_progress_feature_requests = FeatureRequest.where(status: "In Progress")
   end
 
   # GET /feature_requests/1
