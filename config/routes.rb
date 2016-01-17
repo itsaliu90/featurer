@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :users
+
   resources :feature_requests do
     member do
       get 'upvote'
     end
+  end
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

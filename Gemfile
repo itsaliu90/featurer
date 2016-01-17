@@ -45,3 +45,6 @@ gem "twitter-bootstrap-rails"
 
 # Use devise for authentication
 gem 'devise'
+
+# Use font awesome!
+gem "font-awesome-rails"

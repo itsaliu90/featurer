@@ -76,6 +76,6 @@ class FeatureRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feature_request_params
-      params[:feature_request].permit(:subject, :description)
+      params[:feature_request].permit(:subject, :description, :status)
     end
 end

@@ -3,6 +3,6 @@ class FeatureRequest
 
   field :subject, type: String
   field :description, type: String
-  field :votes, type: Integer, default: 0
+  field :votes, type: Integer, default: 1
   field :status, type: String, default: "Open"
 end
