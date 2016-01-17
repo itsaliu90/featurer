@@ -48,3 +48,9 @@ gem 'devise'
 
 # Use font awesome!
 gem "font-awesome-rails"
+
+# For use with Heroku
+gem 'rails_12factor', group: :production
+
+# Ruby version
+ruby "2.3.0"
