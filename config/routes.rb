@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :feature_requests do
     member do
       get 'upvote'
+      put 'close'
+      patch 'close'
     end
   end
 

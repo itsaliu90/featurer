@@ -1,10 +1,15 @@
 class FeatureRequestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_feature_request, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :set_feature_request, only: [:show, :edit, :update, :destroy, :upvote, :close]
 
   def upvote
     @feature_request.inc(votes: 1)
     redirect_to feature_requests_url
+  end
+
+  def close
+    @feature_request.update(status: 'Closed')
+    redirect_to admin_url
   end
 
   # GET /feature_requests

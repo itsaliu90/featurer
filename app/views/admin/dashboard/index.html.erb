@@ -14,7 +14,7 @@
       <th>Requester</th>
       <th>Votes</th>
       <th>Status</th>
-      <th span="1"></th>
+      <th span="2"></th>
     </tr>
   </thead>
 
@@ -27,6 +27,7 @@
         <td><%= feature_request.votes %></td>
         <td><%= feature_request.status %></td>
         <td><%= link_to 'Edit', edit_feature_request_path(feature_request) %></td>
+        <td><%= link_to 'Close', close_feature_request_path(feature_request), method: :put %></td>
       </tr>
     <% end %>
   </tbody>
