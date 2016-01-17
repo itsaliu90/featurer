@@ -3,8 +3,13 @@ class FeatureRequestsController < ApplicationController
   before_action :set_feature_request, only: [:show, :edit, :update, :destroy, :upvote, :close]
 
   def upvote
-    @feature_request.inc(votes: 1)
-    redirect_to feature_requests_url
+    if current_user.votes > 0
+      @feature_request.inc(votes: 1)
+      current_user.inc(votes: -1)
+      redirect_to feature_requests_url
+    else
+      redirect_to root_url, flash: { notice: "You don't have enough votes" }
+    end
   end
 
   def close
