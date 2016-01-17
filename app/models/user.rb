@@ -26,6 +26,9 @@ class User
   ## Keep track of how many votes a user has
   field :votes, type: Integer, default: 0
 
+  ## A user has many feature requests
+  has_many :feature_requests
+
   ## Confirmable
   # field :confirmation_token,   type: String
   # field :confirmed_at,         type: Time
