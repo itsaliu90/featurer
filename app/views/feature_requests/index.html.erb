@@ -1,59 +1,54 @@
-<h1>CipherHealth Feature Tracker</h1>
-
-<%= link_to 'Admin', admin_path %><br />
-
-<%= fa_icon "plus" %>
-<%= link_to 'Add Feature Request', new_feature_request_path %>
-
-<h2>Open Feature Requests</h2>
-<table class="table table-hover">
-  <colgroup>
-    <col span="1" style="width: 25%;">
-    <col span="1" style="width: 60%;">
-    <col span="1" style="width: 5%;">
-    <col span="1" style="width: 10%;">
-  </colgroup>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Description</th>
-      <th>Votes</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @open_feature_requests.each do |feature_request| %>
+<div class="row"><%= button_to '+ Add Feature Request', new_feature_request_path, class: "btn btn-success pull-right" %></div>
+<div class="row">
+  <h2>Open Feature Requests</h2>
+  <table class="table table-hover">
+    <colgroup>
+      <col span="1" style="width: 25%;">
+      <col span="1" style="width: 60%;">
+      <col span="1" style="width: 5%;">
+      <col span="1" style="width: 10%;">
+    </colgroup>
+    <thead>
       <tr>
-        <td><%= link_to feature_request.subject, feature_request_path(feature_request) %></td>
-        <td><%= feature_request.description %></td>
-        <td><%= feature_request.votes %></td>
-        <td><%= link_to 'Upvote', upvote_feature_request_path(feature_request) %></td>
+        <th>Subject</th>
+        <th>Description</th>
+        <th>Votes</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<h2>In-Progress Feature Requests</h2>
-<table class="table table-hover">
-  <colgroup>
-    <col span="1" style="width: 25%;">
-    <col span="1" style="width: 75%;">
-  </colgroup>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Description</th>
-    </tr>
-  </thead>
+    <tbody>
+      <% @open_feature_requests.each do |feature_request| %>
+        <tr>
+          <td><%= link_to feature_request.subject, feature_request_path(feature_request) %></td>
+          <td><%= feature_request.description %></td>
+          <td><%= feature_request.votes %></td>
+          <td><%= link_to 'Upvote', upvote_feature_request_path(feature_request) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-  <tbody>
-    <% @in_progress_feature_requests.each do |feature_request| %>
+  <h2>In-Progress Feature Requests</h2>
+  <table class="table table-hover">
+    <colgroup>
+      <col span="1" style="width: 25%;">
+      <col span="1" style="width: 75%;">
+    </colgroup>
+    <thead>
       <tr>
-        <td><%= feature_request.subject %></td>
-        <td><%= feature_request.description %></td>
+        <th>Subject</th>
+        <th>Description</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
+
+    <tbody>
+      <% @in_progress_feature_requests.each do |feature_request| %>
+        <tr>
+          <td><%= feature_request.subject %></td>
+          <td><%= feature_request.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
