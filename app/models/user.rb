@@ -24,7 +24,7 @@ class User
   field :last_sign_in_ip,    type: String
 
   ## Keep track of how many votes a user has
-  field :votes, type: Integer, default: 0
+  field :votes, type: Integer, default: 5
 
   ## A user has many feature requests
   has_many :feature_requests
