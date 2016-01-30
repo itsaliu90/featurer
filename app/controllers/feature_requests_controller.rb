@@ -45,7 +45,7 @@ class FeatureRequestsController < ApplicationController
     @feature_request.update(user_id: current_user._id)
     respond_to do |format|
       if @feature_request.save
-        format.html { redirect_to @feature_request, notice: 'Feature request was successfully created.' }
+        format.html { redirect_to feature_requests_path, notice: 'Feature request was successfully created.' }
         format.json { render :show, status: :created, location: @feature_request }
       else
         format.html { render :new }
